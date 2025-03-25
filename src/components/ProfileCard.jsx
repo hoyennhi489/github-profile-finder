@@ -31,8 +31,8 @@ const ProfileCard = ({ profile }) => {
         <strong>Location:</strong> {profile.location || "Not specified"}
       </Typography>
       <Typography variant="body2">
-        <strong>Followers:</strong> {profile.followers} |{" "}
-        <strong>Following:</strong> {profile.following}
+        <strong>Followers:</strong> {profile.followers ?? 0} |{" "}
+        <strong>Following:</strong> {profile.following ?? 0} {/* Use ?? 0 to display 0 if the value is undefined */}
       </Typography>
       <Typography variant="body2">
         <strong>Repos:</strong> {profile.public_repos}
