@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { TextField, Button, Box } from "@mui/material";
 
 const SearchBar = ({ onSearch }) => {
   const [username, setUsername] = useState("");
@@ -11,15 +12,26 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="search-bar">
-      <input
-        type="text"
-        placeholder="Enter GitHub username..."
+    <Box
+    component="form"
+    onSubmit={handleSubmit}
+    sx={{
+      display: 'flex',
+      gap: 2,
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: 2,
+    }}
+    >
+      <TextField 
+        id="outlined-basic" 
+        label="GitHub Username" 
+        variant="outlined" 
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-      />
-      <button type="submit">Search</button>
-    </form>
+        />
+      <Button type="submit" variant="contained">Search</Button>
+      </Box>
   );
 };
 
